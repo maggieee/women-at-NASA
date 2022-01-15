@@ -1,0 +1,28 @@
+.grid {
+    display: grid;
+    /* grid-template-columns: 2fr 2fr 2fr 2fr; */
+    grid-template-columns: repeat(auto-fill, minmax(1, 1fr));
+    grid-gap: 10px;
+  }
+  
+  div.image {
+    border-radius: 15px;
+    border: 3px solid cornflowerblue;
+    /* width: 16em;
+    height: 25em; */
+    background-color:rgb(191, 210, 245);
+    margin: 2em;
+    padding: 1em;
+    display: inline-block;
+  }
+  
+  body {
+    font-family: "Georgia", Helvetica, sans-serif;
+    color:rgb(43, 43, 43);
+    background-color: azure;
+  }
+
+  img {
+    height: 300px;
+    text-align: center;
+  }

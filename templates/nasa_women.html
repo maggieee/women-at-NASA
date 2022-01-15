@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Women at NASA {% endblock %}
+
+{% block js %}
+<script src="/static/js/nasaWomen.jsx" type="text/jsx"></script>
+{% endblock %}
+
+
+{% block body %}
+<h1>Women @ NASA</h1>
+<p>Searching for the women at NASA throughout history, using the https://images-api.nasa.gov API.</p>
+<div id="all-images" class="grid"></div>
+{% endblock %}
