@@ -18,7 +18,7 @@ function nasaWomen() {
     
         return (
           <div className="image">
-            <img src={props.url} alt="nasa image" />
+            <a href={'https://images.nasa.gov/details-' + props.nasa_id} target="_blank"><img src={props.url} alt="NASA image" /></a>
             <h2>{props.title}</h2>
             <p>{props.description}</p>
             <i>Date created: {props.date_created}</i>
@@ -36,6 +36,7 @@ function nasaWomen() {
                 description={currentImage.data[0].description}
                 url={currentImage.links[0].href}
                 date_created={currentImage.data[0].date_created.slice(0,10)}
+                nasa_id={currentImage.data[0].nasa_id}
                 key={currentImage.data[0].nasa_id}
             />
             );
