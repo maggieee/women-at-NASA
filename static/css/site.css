@@ -1,28 +1,35 @@
-.grid {
-    display: grid;
+/* .grid {
+    display: grid; */
     /* grid-template-columns: 2fr 2fr 2fr 2fr; */
-    grid-template-columns: repeat(auto-fill, minmax(1, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(1, 1fr));
     grid-gap: 10px;
-  }
+  } */
   
-  div.image {
-    border-radius: 15px;
+  div.image-container {
+    border-radius: 10px;
     border: 3px solid cornflowerblue;
+    color:rgb(43, 43, 43);
     /* width: 16em;
     height: 25em; */
     background-color:rgb(191, 210, 245);
     margin: 2em;
     padding: 1em;
     display: inline-block;
+    justify-content: center;
+  }
+
+  div.image {
+    justify-content: center;
   }
   
   body {
     font-family: "Georgia", Helvetica, sans-serif;
-    color:rgb(43, 43, 43);
-    background-color: azure;
+    color:rgb(214, 212, 212);
+    background-image: url("/static/images/abstract-5719530.jpg");
   }
 
   img {
-    height: 300px;
+    /* height: 300px; */
     text-align: center;
+    display: inline-block;
   }

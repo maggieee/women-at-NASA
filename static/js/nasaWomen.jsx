@@ -25,20 +25,24 @@ function nasaWomen() {
           }
     
         return (
-          <div className="image-container">
-              <div className="image">
-                <a href={'https://images.nasa.gov/details-' + props.nasa_id} target="_blank"><img src={props.url} alt="NASA image" /></a>
-                <h2>{props.title}</h2>
-                <p>{props.description}</p>
-                <i>Date image created: {props.date_created}</i>
+        //   <div className="image-container">
+        //   <div class="container">
+            <div class="row">
+              <div class="col">
+                <div className="image-container">
+                    <div className="image">
+                    <a href={'https://images.nasa.gov/details-' + props.nasa_id} target="_blank"><img src={props.url} alt="Image of NASA women" /></a>
+                    </div>
+                    <h2>{props.title}</h2>
+                    <p>{props.description}</p>
+                    <i>Date image created: {props.date_created}</i><br></br><br></br>
+                    <button type="button" class="btn btn-light" onClick={() => setLikeValue(!likeValue)}>
+                        {liked}
+                    </button>
+                </div>
               </div>
-              <div className="like-button">
-                <button type="button" onClick={() => setLikeValue(!likeValue)}>
-                    {liked}
-                </button>
-              </div>
-
-          </div>
+            </div>
+        //   </div>
         );
       }
       
@@ -64,32 +68,3 @@ function nasaWomen() {
     ReactDOM.render(<NasaImageContainer />, document.querySelector('#all-images'));
     })
   };
-
-// function NasaImage(props) {
-//     return (
-//       <div className="image">
-//         <h2>Name: {props.name}</h2>
-//         <img src={props.url} alt="nasa image" />
-//         <h2>Skill: {props.skill}</h2>
-//       </div>
-//     );
-//   }
-  
-// function NasaImageContainer(props) {
-//     const nasaImages = [];
-
-//     for (const currentImage of nasaImageData) {
-//         nasaImages.push(
-//         <NasaImage
-//             name={currentCard.name}
-//             skill={currentCard.skill}
-//             url={currentImage.imgUrl}
-//             key={currentCard.cardId}
-//         />
-//         );
-//     }
-  
-//     return <React.Fragment>{NasaImages}</React.Fragment>;
-//   }
-
-// ReactDOM.render(<NasaImageContainer />, document.querySelector('#all-images'));
