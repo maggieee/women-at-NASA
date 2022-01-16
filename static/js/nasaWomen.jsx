@@ -15,13 +15,29 @@ function nasaWomen() {
       console.log(nasaImageData[0], nasaImageData[1].links[0].href)
 
       function NasaImage(props) {
+
+          const [likeValue, setLikeValue] = React.useState(false);
+
+          let liked = "Not yet liked";
+
+          if (likeValue === true) {
+            liked = "Liked!";
+          }
     
         return (
-          <div className="image">
-            <a href={'https://images.nasa.gov/details-' + props.nasa_id} target="_blank"><img src={props.url} alt="NASA image" /></a>
-            <h2>{props.title}</h2>
-            <p>{props.description}</p>
-            <i>Date created: {props.date_created}</i>
+          <div className="image-container">
+              <div className="image">
+                <a href={'https://images.nasa.gov/details-' + props.nasa_id} target="_blank"><img src={props.url} alt="NASA image" /></a>
+                <h2>{props.title}</h2>
+                <p>{props.description}</p>
+                <i>Date image created: {props.date_created}</i>
+              </div>
+              <div className="like-button">
+                <button type="button" onClick={() => setLikeValue(!likeValue)}>
+                    {liked}
+                </button>
+              </div>
+
           </div>
         );
       }
