@@ -1,16 +1,7 @@
-/* .grid {
-    display: grid; */
-    /* grid-template-columns: 2fr 2fr 2fr 2fr; */
-    /* grid-template-columns: repeat(auto-fill, minmax(1, 1fr));
-    grid-gap: 10px;
-  } */
-  
-  div.image-container {
+div.image-container {
     border-radius: 10px;
     border: 3px solid cornflowerblue;
     color:rgb(43, 43, 43);
-    /* width: 16em;
-    height: 25em; */
     background-color:rgb(191, 210, 245);
     margin: 2em;
     padding: 1em;
@@ -29,7 +20,6 @@
   }
 
   img {
-    /* height: 300px; */
     text-align: center;
     display: inline-block;
   }
