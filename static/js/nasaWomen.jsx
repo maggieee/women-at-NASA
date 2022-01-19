@@ -1,6 +1,5 @@
 function getData() {
   return fetch('https://images-api.nasa.gov/search?q=women&media_type=image')
-    .then(console.log('hello'))
     .then(response => response.json())
     .then(res => {
       const nasaImageData = [];
