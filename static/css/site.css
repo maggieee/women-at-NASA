@@ -33,3 +33,7 @@
     text-align: center;
     display: inline-block;
   }
+
+  .btn-light {
+    margin: 5px;
+  }

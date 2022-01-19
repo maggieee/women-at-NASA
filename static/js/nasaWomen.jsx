@@ -14,6 +14,43 @@ function nasaWomen() {
 
       console.log(nasaImageData[0], nasaImageData[1].links[0].href)
 
+      // let year = "all";
+
+      function YearButton(props) {
+        const [year, setYear] = React.useState("all");
+
+        return (
+            <button type="button" class="btn btn-light" value={props.year} onClick={() => alert(props.year)}>
+                        {props.year}
+            </button>
+        );
+      }
+
+      function YearContainer(props) {
+        const years = [];
+        const yearButtons = [<YearButton year={'All years'} key={0}/>];
+      
+        for (const currentImage of nasaImageData) {
+            if (years.includes(currentImage.data[0].date_created.slice(0,4)) == false) {
+                years.push(currentImage.data[0].date_created.slice(0,4));
+            }
+        }
+
+        years.sort();
+
+        for (let year of years) {
+            yearButtons.push (
+                <YearButton
+                    year={year}
+                    key={year}
+                />
+            );
+        }
+        
+        return <React.Fragment><div class="row">
+        <div class="col">{yearButtons}</div></div></React.Fragment>;
+        }
+
       function NasaImage(props) {
 
           const [likeValue, setLikeValue] = React.useState(false);
@@ -50,21 +87,37 @@ function nasaWomen() {
         const nasaImages = [];
     
         for (const currentImage of nasaImageData) {
-            nasaImages.push(
-            <NasaImage
-                title={currentImage.data[0].title}
-                description={currentImage.data[0].description}
-                url={currentImage.links[0].href}
-                date_created={currentImage.data[0].date_created.slice(0,10)}
-                nasa_id={currentImage.data[0].nasa_id}
-                key={currentImage.data[0].nasa_id}
-            />
-            );
+            if (props.year == "all") {
+                if (currentImage.data[0].date_created.slice(0,4) === props.year) {
+                    nasaImages.push(
+                    <NasaImage
+                        title={currentImage.data[0].title}
+                        description={currentImage.data[0].description}
+                        url={currentImage.links[0].href}
+                        date_created={currentImage.data[0].date_created.slice(0,10)}
+                        nasa_id={currentImage.data[0].nasa_id}
+                        key={currentImage.data[0].nasa_id}
+                    />
+                    );
+                }
+            }
+            else {
+                nasaImages.push(
+                    <NasaImage
+                        title={currentImage.data[0].title}
+                        description={currentImage.data[0].description}
+                        url={currentImage.links[0].href}
+                        date_created={currentImage.data[0].date_created.slice(0,10)}
+                        nasa_id={currentImage.data[0].nasa_id}
+                        key={currentImage.data[0].nasa_id}
+                    />
+                    );
+            }
         }
       
         return <React.Fragment>{nasaImages}</React.Fragment>;
       }
-    
-    ReactDOM.render(<NasaImageContainer />, document.querySelector('#all-images'));
+    ReactDOM.render(<YearContainer/>, document.querySelector('#all-years'));
+    ReactDOM.render(<NasaImageContainer/>, document.querySelector('#all-images'));
     })
   };
