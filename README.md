@@ -8,6 +8,6 @@ This application fetches data using https://images-api.nasa.gov's search API to 
 
 *Developed by [Jake Maggie Ronan](https://www.linkedin.com/in/maggie-ronan/).*
 
-![Screenshot of Women @ NASA app!](/static/images/women-at-NASA-screenshot.png "Women @ NASA Screenshot")
+![Screenshot of Women @ NASA app!](/static/images/women-at-NASA 2024 screenshot.png "Women @ NASA Screenshot")
 
 
